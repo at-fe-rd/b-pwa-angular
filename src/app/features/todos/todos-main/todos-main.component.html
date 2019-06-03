@@ -1,0 +1,8 @@
+<section class="todos-main">
+  <ul class="todo-list" *ngFor='let todo of allTodos'>
+    <li class="todo-item">
+      <div class="R2I1d"><input type="checkbox" class="" name='{{todo.id}}' id='{{todo.id}}' (click)='checkTodo(todo)'>
+        <label>{{todo.content}}</label><button class="_6oXTL"></button></div>
+    </li>
+  </ul>
+</section> 

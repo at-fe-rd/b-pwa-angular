@@ -1,0 +1,3 @@
+<app-todos-header (todo)='addNewTodo($event)'></app-todos-header>
+<app-todos-main [allTodos]='allTodos'></app-todos-main>
+<app-todos-footer (newAllTodos)='modifyTodo($event)' [allTodos]='allTodos'></app-todos-footer> 

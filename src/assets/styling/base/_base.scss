@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+html, body {
+  background: map-get($color, grey);
+  color: map-get($color, text);
+  font-family: $font-family-default;
+  font-size: 12px;
+  @include font-smoothing(antialiased);
+}
+h2 {
+  font-size: map-get($font-size, lg);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-default;
+  color: map-get($color, text);
+  @include pxRem('line-height', 34);
+  font-weight: 400;
+  @include pxRem('margin', 0 0 15);
+  padding: 0;
+  margin: 0;
+}

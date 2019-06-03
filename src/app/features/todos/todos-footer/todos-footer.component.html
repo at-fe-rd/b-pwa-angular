@@ -1,0 +1,11 @@
+<footer class="todos-footer">
+  <span class="todos-footer-col actor">
+    <button class="guardian">Clear completed</button>
+  </span>
+  <ul class="todos-footer-col filter">
+    <li><button class="_2VhED" (click)='handleAll()'>All</button></li>
+    <li><button class="_2VhED" (click)='handleActive()'>Active</button></li>
+    <li><button class="_2VhED" (click)='handleComplete()'>Completed</button></li>
+  </ul>
+  <span class="todos-footer-col counter"><strong>{{allTodos.length}}</strong> items left</span>
+</footer>
