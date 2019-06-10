@@ -15,24 +15,28 @@ export class TodosComponent implements OnInit {
 
   ngOnInit() {
     this.action = 'all';
-    this.todos = [];
+    localStorage.getItem('todos') ? this.todos = JSON.parse(localStorage.getItem('todos')) : this.todos = [];
     this.counter = {
       active: 0,
       completed: 0
-    };
+    };    
   }
 
+  saveTodosToLocalStorage = todos => localStorage.setItem('todos', JSON.stringify(todos));
+  
   onChange(action: string, todo: Todo = null) {
     // handle action
     switch (action) {
       case 'add':
         this.todos = [todo, ...this.todos];
+        this.saveTodosToLocalStorage(this.todos);
         break
       case 'delete':
         // just for animation handling
         todo.isDeleting = true;
         setTimeout(() => {
-          this.todos = this.todos.filter(item => item.id !== todo.id)
+          this.todos = this.todos.filter(item => item.id !== todo.id);
+          this.saveTodosToLocalStorage(this.todos);
         }, 500);
         break
       case 'finish':
@@ -45,9 +49,11 @@ export class TodosComponent implements OnInit {
         });
         setTimeout(() => {
           this.todos = completedItems
+          this.saveTodosToLocalStorage(this.todos);
         }, 500);
         break
-      default: break;
+        default: this.saveTodosToLocalStorage(this.todos); 
+        break;
     }
     // update counter when data changed
     this.counter = this.todos.reduce((obj, item: Todo) => {
