@@ -26,6 +26,7 @@ export class TodosComponent implements OnInit {
   onToggleAll() {
     this.todos.forEach(event => {
       event.isCompleted = true;
+      this.saveTodosToLocalStorage(this.todos);
     });
   }
 
