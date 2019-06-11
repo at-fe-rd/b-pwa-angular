@@ -45,7 +45,7 @@ $todoTextLeftAlign: convertPxToRem(60px);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   .todos-header {
     position: relative;
-    .fa-chevron-down {
+    &:after {
       left: 15px;
       position: absolute;
       top: 0;
@@ -55,12 +55,12 @@ $todoTextLeftAlign: convertPxToRem(60px);
       font-size: convertPxToRem(24px);
       display: block;
       font-family: "ipwa";
+      content: "\f078";
     }
     .task-name {
-      display: block;
       position: relative;
-      margin-left: 45px;
-      width: calc(100% - 45px);
+      margin: 0;
+      width: 100%;
       font-size: convertPxToRem(24px);
       @include font-smoothing(antialiased);
       padding: 16px 16px 16px 60px;

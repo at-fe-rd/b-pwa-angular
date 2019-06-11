@@ -1,5 +1,5 @@
 <section class="todos">
-  <app-todos-header (addTodo)="onChange('add', $event)" (selectTodos)="onToggleAll()"></app-todos-header>
+  <app-todos-header (addTodo)="onChange('add', $event)"></app-todos-header>
   <section class="todos-main">
     <ul class="todo-list">
       <app-todo-item *ngFor="let todo of todos | todoFilter:action"
