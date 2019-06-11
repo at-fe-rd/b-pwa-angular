@@ -22,6 +22,14 @@ export class TodosComponent implements OnInit {
   // save todos to localStorage
   saveTodosToLocalStorage = todos => localStorage.setItem('todos', JSON.stringify(todos));
 
+  // select completed of all todos
+  onToggleAll() {
+    this.todos.forEach(event => {
+      event.isCompleted = true;
+      this.saveTodosToLocalStorage(this.todos);
+    });
+  }
+
   onChange(action: string, todo: Todo = null) {
     // handle action
     switch (action) {

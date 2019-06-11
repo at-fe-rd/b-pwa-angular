@@ -8,6 +8,7 @@ import { Todo } from 'app/shared/model/todo/todo.model';
 export class TodosHeaderComponent implements OnInit {
 
   @Output() addTodo: EventEmitter<Todo> = new EventEmitter();
+  @Output() selectTodos: EventEmitter<Todo> = new EventEmitter();
   taskName: string;
 
   constructor() {
@@ -22,5 +23,9 @@ export class TodosHeaderComponent implements OnInit {
       this.addTodo.emit(new Todo(this.taskName));
     }
     this.taskName = '';
+  }
+
+  onToggleAll() {
+    this.selectTodos.emit();
   }
 }

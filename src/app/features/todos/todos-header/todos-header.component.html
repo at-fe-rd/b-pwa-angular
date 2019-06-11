@@ -1,4 +1,5 @@
 <header class="todos-header">
+  <i class="fas fa-chevron-down" (click)="onToggleAll()">&#xf078;</i>
   <input  class="task-name" 
           [(ngModel)]="taskName" 
           (keydown.enter)="onSubmit()" 
