@@ -16,10 +16,7 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.action = 'all';
     localStorage.getItem('todos') ? this.todos = JSON.parse(localStorage.getItem('todos')) : this.todos = [];
-    this.counter = {
-      active: 0,
-      completed: 0
-    };
+    this.countTodos();
   }
 
   // save todos to localStorage
@@ -56,7 +53,11 @@ export class TodosComponent implements OnInit {
         default: this.saveTodosToLocalStorage(this.todos); 
         break;
     }
-    // update counter when data changed
+    this.countTodos();
+  }
+
+  // update counter when data changed
+  countTodos() {
     this.counter = this.todos.reduce((obj, item: Todo) => {
       item.isCompleted ? obj.completed++ : obj.active++;
       return obj;
