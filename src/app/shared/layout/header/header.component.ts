@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     private location: PlatformLocation,
     private http: HttpClient,
     private apiService: ApiService
-  ) { 
+  ) {
   }
 
   ngOnInit() {

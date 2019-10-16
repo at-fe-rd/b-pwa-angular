@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { ApiService, VERSION, ENDPOINT } from '../api/api.service';
 
 @Injectable()
 export class AuthService {
 
-  logger = new Subject<Object>();
+  isLoggedIn = new Subject<boolean>();
   referralRoute: string;
 
   constructor(
@@ -20,30 +20,30 @@ export class AuthService {
     localStorage.removeItem('uid');
     localStorage.removeItem('client');
     this.redirectToLogin();
-    this.logger.next(false);
+    this.isLoggedIn.next(false);
   }
 
   postLogin(body: any) {
     this.api.get(['token.json'], {}).subscribe(
       (res: any) => {
         localStorage.setItem('access-token', res['access-token']);
-        localStorage.setItem('uid', res['uid']);
-        localStorage.setItem('client', res['client']);
-        this.logger.next(true);
+        localStorage.setItem('uid', res.uid);
+        localStorage.setItem('client', res.client);
+        this.isLoggedIn.next(true);
         this.redirectToPrevStep();
       },
       (err) => {
-        this.logger.next(err);
+        // this.isLoggedIn.next(err);
       });
   }
 
   checkLogin(body: any) {
     this.api.get([VERSION, ENDPOINT.checkLogin], {}).subscribe(
       (res: any) => {
-        this.logger.next(true);
+        this.isLoggedIn.next(true);
       },
       (err) => {
-        this.logger.next(err);
+        // this.logger.next(err);
       });
   }
 
@@ -72,7 +72,7 @@ export class AuthService {
   isTokenInvalid() {
     const token = localStorage.getItem('access-token');
     if (!token) {
-      return true
+      return true;
     } else {
       // this.api.setHeaders(token);
       return false;

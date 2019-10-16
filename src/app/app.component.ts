@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   selectedFile: null;
   noBackHeader: any = [];
   deviceInfo: any;
-  isHeaderShow: Boolean = true;
+  isHeaderShow = true;
 
   constructor(
     public i18n: I18nService,
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.noBackHeader = [
       /\/home/,
       /\/auth\/login/
-    ]
+    ];
   }
 
   ngOnInit() {
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     if ('addEventListener' in document) {
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', () => {
           FastClick.attach(document.body);
       }, false);
     }
