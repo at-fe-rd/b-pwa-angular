@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DialogComponent } from '../../../shared/partial/dialog/dialog.component';
 import { AuthService } from '../auth/auth.service';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class ErrorHandler {
