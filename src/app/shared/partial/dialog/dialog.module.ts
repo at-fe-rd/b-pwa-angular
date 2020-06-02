@@ -12,8 +12,5 @@ import { DialogComponent } from './dialog.component';
   ],
   declarations: [DialogComponent],
   exports: [DialogComponent],
-  entryComponents: [
-    DialogComponent
-  ]
 })
 export class DialogModule { }

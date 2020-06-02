@@ -12,8 +12,5 @@ import { AddToHomescreenComponent } from './add-to-homescreen.component';
   ],
   declarations: [AddToHomescreenComponent],
   exports: [AddToHomescreenComponent],
-  entryComponents: [
-    AddToHomescreenComponent
-  ]
 })
 export class AddToHomescreenModule { }
