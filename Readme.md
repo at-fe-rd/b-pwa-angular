@@ -6,8 +6,8 @@
 
 ## Contains
 
-- [x] [Typescript](https://www.typescriptlang.org/) 3.5.3
-- [x] [Angular](https://github.com/angular) 8.2.11
+- [x] [Typescript](https://www.typescriptlang.org/) 3.8.3
+- [x] [Angular](https://github.com/angular) 9.1.9
 
 ## Installation & Running
 
