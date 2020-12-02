@@ -14,6 +14,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "postinstall": "ngcc",
     "start.http": "ng build --prod && http-server ./dist -o -p 4101",
     "serve.http": "http-server ./dist -o -p 4101",
     "start.https": "ng build --prod && http-server ./dist -S -o -p 4102",
