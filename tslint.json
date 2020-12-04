@@ -4,6 +4,12 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "align": {
+      "options": [
+        "parameters",
+        "statements"
+      ]
+    },
     "arrow-parens": false,
     "arrow-return-shorthand": true,
     "array-type": false,
@@ -121,6 +127,15 @@
     "no-inputs-metadata-property": true,
     "no-output-native": true,
     "no-output-on-prefix": true,
+    "space-before-function-paren": {
+      "options": {
+        "anonymous": "never",
+        "asyncArrow": "always",
+        "constructor": "never",
+        "method": "never",
+        "named": "never"
+      }
+    },
     "no-output-rename": true,
     "no-outputs-metadata-property": true,
     "template-banana-in-box": true,

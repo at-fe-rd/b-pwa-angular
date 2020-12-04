@@ -22,7 +22,7 @@ declare var FastClick;
 })
 
 export class AppComponent implements OnInit, AfterViewInit {
-  title: 'app';
+  title = 'app';
   selectedFile: null;
   noBackHeader: any = [];
   deviceInfo: any;

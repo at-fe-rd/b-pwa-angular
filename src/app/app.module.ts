@@ -10,7 +10,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { CoreModule } from './core/module/core.module';
-import { DeviceDetectorModule } from 'ngx-device-detector';
 import { AddToHomescreenModule } from './shared/partial/add-to-homescreen/add-to-homescreen.module';
 import { environment } from '../environments/environment';
 import { ErrorHandler } from './core/service/api/error-handler';
@@ -30,7 +29,6 @@ export function tokenGetter() {
   ],
   imports: [
     BrowserModule,
-    DeviceDetectorModule.forRoot(),
     MatDialogModule,
     HttpClientModule,
     JwtModule.forRoot({

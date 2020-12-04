@@ -15,9 +15,9 @@ export class TokenInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authReq = req.clone({
       headers: new HttpHeaders({
-        'access-token': localStorage.getItem('access-token') ? localStorage.getItem('access-token') : '',
-        uid: localStorage.getItem('uid') ? localStorage.getItem('uid') : '',
-        client: localStorage.getItem('client') ? localStorage.getItem('client') : '',
+        'access-token': localStorage.getItem('access-token') ||  '',
+        uid: localStorage.getItem('uid') || '',
+        client: localStorage.getItem('client') || '',
       })
     });
 

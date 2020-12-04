@@ -22,7 +22,8 @@ export class TodosComponent implements OnInit {
     };
   }
 
-  onChange(action: string, todo: Todo = null) {
+  onChange(action: string, todo?: Todo) {
+    if (!todo) return;
     // handle action
     switch (action) {
       case 'add':

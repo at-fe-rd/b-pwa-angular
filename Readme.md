@@ -2,12 +2,12 @@
 
 ## Prerequisite
 
-- Node ^12.0.0
+- Node ^14.0.0
 
 ## Contains
 
-- [x] [Typescript](https://www.typescriptlang.org/) 3.8.3
-- [x] [Angular](https://github.com/angular) 9.1.9
+- [x] [Typescript](https://www.typescriptlang.org/) ~4.0.0
+- [x] [Angular](https://github.com/angular) ^10.0.0
 
 ## Installation & Running
 

@@ -20,7 +20,6 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "aot": true,
-            "es5BrowserSupport": true,
             "assets": [
               "src/assets",
               "src/api",
